@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SnakePro</title>
+  <style>
+    :root,
+    body {
+      height: 100%;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn">开始游戏</button>
+
+  <script src="./js/jsUtils.js"></script>
+  <script src="./js/init.js"></script>
+  <script src="./js/SquareFactory.js"></script>
+  <script src="./js/Ground.js"></script>
+  <script src="./js/Snake.js"></script>
+  <script src="./js/Game.js"></script>
+
+  <script>
+    let count = 0; // 用于标识只能开始依次游戏，如果要再次开始的话，需要刷新页面
+    // 获取页面中button按钮，绑定点击事件，开始游戏
+    const oBtn = document.getElementById('btn');
+    oBtn.onclick = function () {
+      count++;
+      if (count === 1) {
+        oGame.start();
+        return;
+      }
+      // oGame.start();
+    };
+  </script>
+</body>
+
+</html>
